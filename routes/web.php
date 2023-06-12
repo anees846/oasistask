@@ -36,8 +36,10 @@ Route::post('post-loginadmin', [AuthController::class, 'adminpostLogin'])->name(
 Route::get('registration', [AuthController::class, 'registration'])->name('register');
 Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
 Route::post('post-edituser', [AuthController::class, 'postUseredit'])->name('edituser.post');
+Route::post('post-adduser', [AuthController::class, 'postUseradd'])->name('adduser.post');
 Route::get('adminlogin', [AuthController::class, 'adminlogin'])->name('adminlogin');
 Route::get('dashboard', [AuthController::class, 'dashboard']);
 Route::get('edituser/{id}', [AuthController::class, 'edituser']);
+Route::get('adduser', [AuthController::class, 'adduser']);
 Route::get('admindashboard', [AuthController::class, 'admindashboard']);
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');

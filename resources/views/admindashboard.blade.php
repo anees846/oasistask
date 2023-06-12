@@ -6,8 +6,8 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-                <div class="card-header">{{ __('Users') }}</div>
+                <div class="card-header"><b>{{ __('Dashboard') }}</b></div><br>
+                <div class="card-header">{{ __('Users') }} <a style="float: right;" href="{{ url('adduser') }}"><button class="btn btn-sm btn-primary">Add User</button></a></div>
                 <div class="card-body">
                     @if (session('success'))
                         <div class="alert alert-success" role="alert">
@@ -61,9 +61,11 @@
                         </tbody>
                       </table>
 
-                      {{ $users->links() }}
+
                 </div>
+
             </div>
+            {{-- {{ $users->links() }} --}}
         </div>
     </div>
 </div>

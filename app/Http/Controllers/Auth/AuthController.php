@@ -129,11 +129,22 @@ class AuthController extends Controller
     public function admindashboard()
     {
         if(Auth::check()){
-            $users = User::paginate(3);
+            // $users = User::paginate(3);
+            $users = User::all();
             return view('admindashboard' , ['users' => $users]);
         }
 
         return redirect("adminlogin")->withSuccess('Opps! You do not have access');
+    }
+
+
+    public function adduser()
+    {
+        if(Auth::check()){
+            return view('adduser');
+        }
+
+        return redirect("login")->withSuccess('Opps! You do not have access');
     }
 
 
